@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="DatabaseMcp.Cli/DatabaseMcp.Cli.csproj" />
+  <Project Path="DatabaseMcp.Core/DatabaseMcp.Core.csproj" />
+  <Project Path="DatabaseMcp.Tests/DatabaseMcp.Tests.csproj" />
+</Solution>
