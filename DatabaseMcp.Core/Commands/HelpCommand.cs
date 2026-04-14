@@ -16,7 +16,7 @@ namespace DatabaseMcp.Core.Commands
 Commands:
   add <name> <connection-string>   Add a named database connection
   remove <name>                    Remove a saved connection
-  list                             List all saved connections
+  list [--details]                  List all saved connections
   test [name]                      Test a database connection
   schema [name]                    Show database schema
   query [name] <sql>               Execute a read-only SQL query

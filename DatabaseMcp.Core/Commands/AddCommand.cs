@@ -46,7 +46,7 @@ namespace DatabaseMcp.Core.Commands
 
                 _store.Add(connection);
 
-                string message = $"Connection '{_name}' added ({providerType} @ {metadata.Host}:{metadata.Port}/{metadata.Database})";
+                string message = $"Connection '{_name}' added ({providerType}).";
                 return Task.FromResult(new CommandResult(true, message));
             }
             catch (ArgumentException ex)

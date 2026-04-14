@@ -39,7 +39,7 @@ namespace DatabaseMcp.Core.Commands
                 string connectionString = _store.DecryptConnectionString(connection.EncryptedConnectionString);
                 IDatabaseProvider provider = _providerFactory.Create(connection.ProviderType);
                 await provider.TestConnectionAsync(connectionString, cancellationToken);
-                return new CommandResult(true, $"Connection '{_name}' is working ({connection.ProviderType} @ {connection.Metadata.Host}:{connection.Metadata.Port}/{connection.Metadata.Database}).");
+                return new CommandResult(true, $"Connection '{_name}' is working.");
             }
             catch (Exception ex)
             {

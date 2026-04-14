@@ -40,6 +40,8 @@ namespace DatabaseMcp.Tests.Commands
 
             Assert.True(result.Success);
             Assert.Contains("working", result.Message);
+            Assert.DoesNotContain("localhost", result.Message);
+            Assert.DoesNotContain("testdb", result.Message);
         }
 
         [Fact]

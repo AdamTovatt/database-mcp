@@ -55,13 +55,10 @@ namespace DatabaseMcp.Tests.Commands
             Assert.NotNull(result.Details);
             Assert.Contains("production", result.Details);
             Assert.Contains("postgres", result.Details);
-            Assert.Contains("db.prod.com", result.Details);
-            Assert.Contains("app", result.Details);
-            Assert.Contains("admin", result.Details);
         }
 
         [Fact]
-        public async Task ExecuteAsync_NeverExposesPassword()
+        public async Task ExecuteAsync_NeverExposesConnectionDetails()
         {
             _store.Add(new SavedConnection
             {
@@ -74,8 +71,10 @@ namespace DatabaseMcp.Tests.Commands
             ListCommand command = new ListCommand(_store);
             CommandResult result = await command.ExecuteAsync(CancellationToken.None);
 
-            Assert.DoesNotContain("my-secret-pass", result.Message);
-            Assert.DoesNotContain("my-secret-pass", result.Details ?? "");
+            string output = result.Message + (result.Details ?? "");
+            Assert.DoesNotContain("my-secret-pass", output);
+            Assert.DoesNotContain("localhost", output);
+            Assert.DoesNotContain("user", output);
         }
 
         [Fact]

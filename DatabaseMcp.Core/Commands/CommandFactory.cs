@@ -34,7 +34,7 @@ namespace DatabaseMcp.Core.Commands
             {
                 "add" => CreateAddCommand(args),
                 "remove" => CreateRemoveCommand(args),
-                "list" => new ListCommand(_store),
+                "list" => CreateListCommand(args),
                 "test" => CreateTestCommand(args),
                 "schema" => CreateSchemaCommand(args),
                 "query" => CreateQueryCommand(args),
@@ -63,6 +63,13 @@ namespace DatabaseMcp.Core.Commands
             }
 
             return new RemoveCommand(_store, args[1]);
+        }
+
+        private ListCommand CreateListCommand(string[] args)
+        {
+            bool includeDetails = args.Any(a => a.Equals("--details", StringComparison.OrdinalIgnoreCase) ||
+                                                a.Equals("-d", StringComparison.OrdinalIgnoreCase));
+            return new ListCommand(_store, includeDetails);
         }
 
         private TestCommand CreateTestCommand(string[] args)

@@ -33,7 +33,7 @@ namespace DatabaseMcp.Tests.Commands
 
             Assert.True(result.Success);
             Assert.Contains("test-db", result.Message);
-            Assert.Contains("localhost", result.Message);
+            Assert.DoesNotContain("localhost", result.Message);
             Assert.NotNull(_store.GetByName("test-db"));
         }
 
