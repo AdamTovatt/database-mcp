@@ -18,14 +18,15 @@ This detects your platform, downloads the latest release, and installs the `db` 
 
 ### Updaemon (Linux)
 
-If you use [updaemon](https://github.com/AdamTovatt/updaemon) for managing tools:
+If you use [updaemon](https://github.com/AdamTovatt/updaemon) (v0.8.0+) for managing tools:
 
 ```bash
 updaemon new db --from github --remote AdamTovatt/database-mcp/db-linux-arm64.zip --type cli
+updaemon set-exec-name db DatabaseMcp.Cli
 updaemon init db
 ```
 
-Replace `db-linux-arm64.zip` with the appropriate asset for your architecture (e.g. `db-linux-x64.zip`). Future updates are handled by `updaemon update`.
+Replace `db-linux-arm64.zip` with `db-linux-x64.zip` on x86_64 systems. Future updates are handled by `updaemon update`.
 
 ### .NET tool
 
