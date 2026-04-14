@@ -89,7 +89,7 @@ main() {
     echo "Extracting..."
     unzip -qo "${TMP_DIR}/${asset}" -d "${TMP_DIR}/extracted"
 
-    local binary_path="${TMP_DIR}/extracted/db"
+    local binary_path="${TMP_DIR}/extracted/DatabaseMcp.Cli"
     if [ ! -f "$binary_path" ]; then
         echo "Binary not found in archive." >&2
         exit 1
