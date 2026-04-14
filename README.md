@@ -8,13 +8,34 @@ A read-only database query tool for AI agents and CLI users. Works as both a CLI
 
 ## Installation
 
+### Install script (macOS / Linux)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/AdamTovatt/database-mcp/master/install-db.sh | bash
+```
+
+This detects your platform, downloads the latest release, and installs the `db` binary to `/usr/local/bin`. Requires the [GitHub CLI](https://cli.github.com/) (`gh`) to be installed and authenticated. Run the same command again to update.
+
+### Updaemon (Linux)
+
+If you use [updaemon](https://github.com/AdamTovatt/updaemon) for managing tools:
+
+```bash
+updaemon new db --from github --remote AdamTovatt/database-mcp/db-linux-arm64.zip --type cli
+updaemon init db
+```
+
+Replace `db-linux-arm64.zip` with the appropriate asset for your architecture (e.g. `db-linux-x64.zip`). Future updates are handled by `updaemon update`.
+
+### .NET tool
+
 ```bash
 dotnet tool install --global DatabaseMcp
 ```
 
 After installation, the `db` command will be available globally.
 
-To update to the latest version:
+To update:
 
 ```bash
 dotnet tool update --global DatabaseMcp
