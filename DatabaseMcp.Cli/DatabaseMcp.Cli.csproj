@@ -20,7 +20,7 @@
     <ToolCommandName>db</ToolCommandName>
     <PackageOutputPath>./bin/nupkg</PackageOutputPath>
     <PackageId>DatabaseMcp</PackageId>
-    <Version>1.0.0</Version>
+    <Version>0.3.0</Version>
     <Authors>Adam Tovatt</Authors>
     <Description>Read-only database query tool for AI agents and CLI users. Works as both a CLI tool and MCP server.</Description>
     <PackageTags>mcp;database;cli-tool;postgres;read-only;mcp-server;claude-code</PackageTags>
